@@ -1,12 +1,12 @@
 <template>
-    <article id="companies" @changedDB="load">
+    <article id="companies">
         <h1>Firmen</h1>
-        <companyAddDialog/>
+        <companyAddDialog @addedCompany="load"/>
         <!-- <v-card v-for="company in companies">
             <v-card-title><v-icon left>business</v-icon> {{company.name}}</v-card-title>
             <v-card-text><v-icon>location_on</v-icon> {{company.adress}}</v-card-text>
         </v-card> -->
-        <company v-for="company in companies" :company="company" :key="company.id"/>
+        <company @deletedCompany="load" v-for="company in companies" :company="company" :key="company.id"/>
     </article>
 </template>
 

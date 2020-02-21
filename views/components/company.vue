@@ -23,7 +23,7 @@ export default {
       http
         .delete("/companies/" + this.company._id)
         .then(response => {
-          this.emit('changedDB')  
+          this.$emit('deletedCompany')  
         })
     }
   }
